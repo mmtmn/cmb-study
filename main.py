@@ -2,37 +2,37 @@ import healpy as hp
 import numpy as np
 import open3d as o3d
 
-# === Load HEALPix FITS Map ===
-filename = 'HFI_SkyMap_857-field-Int_2048_R3.00_full.fits'
+# === Load Planck 143 GHz HEALPix FITS Map ===
+filename = 'HFI_SkyMap_143-field-IQU_2048_R3.00_full.fits'  # <-- Make sure this matches your file
 data = hp.read_map(filename)
 
-# === Get NSIDE and Pixel Info ===
+# === Get NSIDE and total pixel count ===
 nside = hp.npix2nside(len(data))
-pixels = np.arange(hp.nside2npix(nside))
+npix = hp.nside2npix(nside)
+pixels = np.arange(npix)
 
-# === Get Angular Coordinates ===
+# === Angular coordinates (theta: [0, pi], phi: [0, 2pi]) ===
 theta, phi = hp.pix2ang(nside, pixels)
 
-# === Convert to 3D Cartesian Coordinates on Unit Sphere ===
+# === Convert spherical to Cartesian coordinates ===
 x = np.sin(theta) * np.cos(phi)
 y = np.sin(theta) * np.sin(phi)
 z = np.cos(theta)
 
-# === Normalize and Clean Weights (Intensity Values) ===
+# === Clean + Normalize intensity data ===
 weights = np.nan_to_num(data)
-weights = (weights - np.min(weights)) / (np.max(weights) - np.min(weights))  # Scale 0–1
 
-# === Optional Filter: Remove Near-Zero Weights ===
-mask = weights > 0.01
-x, y, z, weights = x[mask], y[mask], z[mask], weights[mask]
+# Optional: Log scaling to bring out subtle structure
+weights = np.log1p(np.abs(weights))  # log(1 + |x|)
 
-# === Create Point Cloud on Unit Sphere ===
+# Normalize weights to [0, 1] for color mapping
+weights = (weights - np.min(weights)) / (np.max(weights) - np.min(weights))
+
+# === Build 3D Point Cloud on Unit Sphere ===
 points = np.vstack((x, y, z)).T
+colors = np.vstack([weights]*3).T  # Grayscale color
 
-# === Color by Normalized Weight (Grayscale) ===
-colors = np.vstack([weights]*3).T  # Repeat weights for R, G, B
-
-# === Create and Visualize Point Cloud ===
+# === Create and Display Point Cloud ===
 pcd = o3d.geometry.PointCloud()
 pcd.points = o3d.utility.Vector3dVector(points)
 pcd.colors = o3d.utility.Vector3dVector(colors)
