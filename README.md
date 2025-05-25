@@ -7,3 +7,7 @@
 
 # using the HFI_SkyMap_143-field-IQU_2048_R3.00_full from Plank Lagacy Archive, we get this:
 ![image](https://github.com/user-attachments/assets/f66e01c1-3fbe-4d7e-a866-f71990c10247)
+
+# since it was too dark, improving the normalization we get this:
+
+![image](https://github.com/user-attachments/assets/c574e347-c50b-47a4-a460-961c9a27d7a1)
