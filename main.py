@@ -2,39 +2,37 @@ import healpy as hp
 import numpy as np
 import open3d as o3d
 
-# === Load Planck 143 GHz HEALPix FITS Map ===
-filename = 'HFI_SkyMap_143-field-IQU_2048_R3.00_full.fits'  # <-- Make sure this matches your file
-data = hp.read_map(filename)
+# === Load Planck 143 GHz Intensity Map ===
+filename = 'HFI_SkyMap_143-field-IQU_2048_R3.00_full.fits'
+data = hp.read_map(filename, field=0)  # field=0 = Intensity (I)
 
-# === Get NSIDE and total pixel count ===
+# === HEALPix Resolution Info ===
 nside = hp.npix2nside(len(data))
 npix = hp.nside2npix(nside)
 pixels = np.arange(npix)
 
-# === Angular coordinates (theta: [0, pi], phi: [0, 2pi]) ===
+# === Spherical to Cartesian Coordinates ===
 theta, phi = hp.pix2ang(nside, pixels)
-
-# === Convert spherical to Cartesian coordinates ===
 x = np.sin(theta) * np.cos(phi)
 y = np.sin(theta) * np.sin(phi)
 z = np.cos(theta)
 
-# === Clean + Normalize intensity data ===
+# === Normalize CMB Intensity (Z-score + contrast boost) ===
 weights = np.nan_to_num(data)
+mean = np.mean(weights)
+std = np.std(weights)
+weights = (weights - mean) / std              # Standardize
+weights = np.clip(weights, -3, 3)             # Clip outliers
+weights = (weights + 3) / 6                   # Scale to [0, 1]
+weights = weights ** 0.4                      # Gamma correction for brightness
 
-# Optional: Log scaling to bring out subtle structure
-weights = np.log1p(np.abs(weights))  # log(1 + |x|)
-
-# Normalize weights to [0, 1] for color mapping
-weights = (weights - np.min(weights)) / (np.max(weights) - np.min(weights))
-
-# === Build 3D Point Cloud on Unit Sphere ===
+# === Create Point Cloud (Unit Sphere) ===
 points = np.vstack((x, y, z)).T
-colors = np.vstack([weights]*3).T  # Grayscale color
+colors = np.vstack([weights]*3).T  # Grayscale coloring
 
-# === Create and Display Point Cloud ===
 pcd = o3d.geometry.PointCloud()
 pcd.points = o3d.utility.Vector3dVector(points)
 pcd.colors = o3d.utility.Vector3dVector(colors)
 
+# === Visualize ===
 o3d.visualization.draw_geometries([pcd])
