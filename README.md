@@ -29,3 +29,4 @@ I'll try both approaches, see which one yields the more promissing results, afte
 # filling the sphere based on the data on the surface from its surface resulted in this:
 ![image](https://github.com/user-attachments/assets/f711cbff-8e08-4b4b-aaec-ec4dcc124b4e)
 
+Which is nice, but it most certainly makes me want to introduce smoothed oarticle hydrodynamics to it
