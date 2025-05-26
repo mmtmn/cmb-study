@@ -44,3 +44,7 @@ which is interesting as the cctree biases symmetrically, the spatial subdivision
 
 ok, I think its time to investigate the holographic hypothesis now, filling the sphere and adding ISPH resulted in having to change the algorithm running the gravity to avoid big-o time-space complexity, which introduced biases and wasn't all that worth it. Onwards towards the second option to keep moving forward.
 
+The first attempt at the holographic script resulted in a humorous way:
+- All HEALPix pixels at nside=2048 → ≈ 50 million points on the sphere
+- Then multiplying that by n_depth = 10 → 500+ million 3D points
+- Then trying to store and visualize all of them at once
