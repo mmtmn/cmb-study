@@ -14,3 +14,13 @@
 
 # now we'll add false color mapping, volume, a minimal N-body simulator with gravity and initial velocities based on dipole flow with large-scale anisotropies
 ![image](https://github.com/user-attachments/assets/d08db87a-4043-4378-a02d-1f52d2ba436b)
+
+# After 100 steps, we get something like this:
+
+![image](https://github.com/user-attachments/assets/9b55b45c-a3e5-4241-9a4b-21569dfac67e)
+
+which is cool to watch but not ideal, the sphere is still hollow, the partcile are not as granular and there are a fork on the road of decisions here:
+
+1. Fill the sphere and make the particles more granular
+2. Go for a holographic projection
+
