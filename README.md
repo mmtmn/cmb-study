@@ -48,3 +48,5 @@ The first attempt at the holographic script resulted in a humorous way:
 - All HEALPix pixels at nside=2048 → ≈ 50 million points on the sphere
 - Then multiplying that by n_depth = 10 → 500+ million 3D points
 - Then trying to store and visualize all of them at once
+
+Which is interesting, it is something that a CUDA script could most certainly handle
