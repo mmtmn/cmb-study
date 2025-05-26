@@ -74,3 +74,7 @@ This is what gave rise to the dataset creation python3 script. The first attempt
 ![image](https://github.com/user-attachments/assets/460b7a77-a8c9-4e61-b045-ebba6af7779e)
 
 Which is interesting, but I probably got something wrong, so I'll investigate it further 
+
+And, after exploring a bit, this was found:
+
+![image](https://github.com/user-attachments/assets/73d4fe07-4596-4341-932b-dda559181336)
