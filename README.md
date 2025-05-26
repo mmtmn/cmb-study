@@ -30,3 +30,5 @@ I'll try both approaches, see which one yields the more promissing results, afte
 ![image](https://github.com/user-attachments/assets/f711cbff-8e08-4b4b-aaec-ec4dcc124b4e)
 
 Which is nice, but it most certainly makes me want to introduce smoothed oarticle hydrodynamics to it
+
+After further attempts, Smoothed Particle Hydrodynamics seems to provide a more stable fluid dynamics solution
