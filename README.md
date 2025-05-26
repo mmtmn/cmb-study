@@ -40,3 +40,4 @@ BHG's octree keeps subdividing indefinitely lead to a recurssion error
 # interesting results, it collapsed into a cube
 ![image](https://github.com/user-attachments/assets/c326aee4-72d9-4ac4-95db-7d6a83201513)
 
+which is interesting as the cctree biases symmetrically, the spatial subdivision introduces grid-aligned biases, especially when many nodes have near-equal mass and distance: Leading to a shape that resembles the cube bounding box.
