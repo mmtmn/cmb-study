@@ -78,3 +78,5 @@ Which is interesting, but I probably got something wrong, so I'll investigate it
 And, after exploring a bit, this was found:
 
 ![image](https://github.com/user-attachments/assets/73d4fe07-4596-4341-932b-dda559181336)
+
+Which is beautiful and I think I'll end this repository here. Very rewarding to be able to use the real CMB data from the Plank Legacy Archive, use a CUDA script and land on a radial structure after exploring the holographic universe hypothesis. Not that it proves anything, but for a sunday, taking a break from work... worth it. Now back to work. 
