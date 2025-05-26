@@ -50,3 +50,8 @@ The first attempt at the holographic script resulted in a humorous way:
 - Then trying to store and visualize all of them at once
 
 Which is interesting, it is something that a CUDA script could most certainly handle
+
+# CMD shell with holographic memory safe solution resulted in this:
+
+![image](https://github.com/user-attachments/assets/3ff55196-fd0f-4849-91a2-5781d182a29e)
+
