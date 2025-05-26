@@ -19,8 +19,9 @@
 
 ![image](https://github.com/user-attachments/assets/9b55b45c-a3e5-4241-9a4b-21569dfac67e)
 
-which is cool to watch but not ideal, the sphere is still hollow, the partcile are not as granular and there is a fork on the road of decisions here:
+which is cool to watch but not ideal, the sphere is still hollow, the particles are not as granular as they should be and there is a fork on the road of decisions here:
 
 1. Fill the sphere and make the particles more granular
 2. Go for a holographic projection
 
+I'll try both approaches, see which one yields the more promissing results, afterwards, I'm thinking of saving the dataset and moving to a CUDA simulation to support a more robust particle system, which should scale quite nicely
