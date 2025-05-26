@@ -63,3 +63,7 @@ https://github.com/user-attachments/assets/ac0e64ee-730b-4811-b6c5-47ac02ba70f4
 
 https://github.com/user-attachments/assets/12dd7566-3329-4a77-b04d-c94c58bab117
 
+now, we can use the dust-heavy 857Ghz, the 545Ghz synchroton and 143Ghz CMB to create a multi frequency CMD shell holographic visualization, which resulted in:
+
+https://github.com/user-attachments/assets/f7552c91-c76e-41bc-b9ca-acfe83c50c0b
+
