@@ -19,7 +19,7 @@
 
 ![image](https://github.com/user-attachments/assets/9b55b45c-a3e5-4241-9a4b-21569dfac67e)
 
-which is cool to watch but not ideal, the sphere is still hollow, the partcile are not as granular and there are a fork on the road of decisions here:
+which is cool to watch but not ideal, the sphere is still hollow, the partcile are not as granular and there is a fork on the road of decisions here:
 
 1. Fill the sphere and make the particles more granular
 2. Go for a holographic projection
