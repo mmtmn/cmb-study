@@ -41,3 +41,6 @@ BHG's octree keeps subdividing indefinitely lead to a recurssion error
 ![image](https://github.com/user-attachments/assets/c326aee4-72d9-4ac4-95db-7d6a83201513)
 
 which is interesting as the cctree biases symmetrically, the spatial subdivision introduces grid-aligned biases, especially when many nodes have near-equal mass and distance: Leading to a shape that resembles the cube bounding box.
+
+ok, I think its time to investigate the holographic hypothesis now, filling the sphere and adding ISPH resulted in having to change the algorithm running the gravity to avoid big-o time-space complexity, which introduced biases and wasn't all that worth it. Onwards towards the second option to keep moving forward.
+
