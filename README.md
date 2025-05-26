@@ -67,3 +67,10 @@ now, we can use the dust-heavy 857Ghz, the 545Ghz synchroton and 143Ghz CMB to c
 
 https://github.com/user-attachments/assets/f7552c91-c76e-41bc-b9ca-acfe83c50c0b
 
+So, the next logical step, considering the downsampling was to go over the math and with at least 6gb you can run the full map.
+
+This is what gave rise to the dataset creation python3 script. The first attempt to run on cuda with no downsampling resulted in this:
+
+![image](https://github.com/user-attachments/assets/460b7a77-a8c9-4e61-b045-ebba6af7779e)
+
+Which is interesting, but I probably got something wrong, so I'll investigate it further 
