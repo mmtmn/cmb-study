@@ -25,3 +25,7 @@ which is cool to watch but not ideal, the sphere is still hollow, the particles 
 2. Go for a holographic projection
 
 I'll try both approaches, see which one yields the more promissing results, afterwards, I'm thinking of saving the dataset and moving to a CUDA simulation to support a more robust particle system, which should scale quite nicely
+
+# filling the sphere based on the data on the surface from its surface resulted in this:
+![image](https://github.com/user-attachments/assets/f711cbff-8e08-4b4b-aaec-ec4dcc124b4e)
+
