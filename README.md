@@ -32,3 +32,6 @@ I'll try both approaches, see which one yields the more promissing results, afte
 Which is nice, but it most certainly makes me want to introduce smoothed oarticle hydrodynamics to it
 
 After further attempts, Smoothed Particle Hydrodynamics seems to provide a more stable fluid dynamics solution
+
+After adding ISPH it was needed to introduce Barnes–Hut Gravity since the complexity was too high
+
