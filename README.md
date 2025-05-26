@@ -36,3 +36,7 @@ After further attempts, Smoothed Particle Hydrodynamics seems to provide a more 
 After adding ISPH it was needed to introduce Barnes–Hut Gravity since the complexity was too high
 
 BHG's octree keeps subdividing indefinitely lead to a recurssion error
+
+# interesting results, it collapsed into a cube
+![image](https://github.com/user-attachments/assets/c326aee4-72d9-4ac4-95db-7d6a83201513)
+
