@@ -55,3 +55,8 @@ Which is interesting, it is something that a CUDA script could most certainly ha
 
 ![image](https://github.com/user-attachments/assets/3ff55196-fd0f-4849-91a2-5781d182a29e)
 
+and here is a 480p quick video on it, quality was compressed do to github's limitation, so its 2.75x sped up to fit the 10mb file limtation:
+
+https://github.com/user-attachments/assets/ac0e64ee-730b-4811-b6c5-47ac02ba70f4
+
+
