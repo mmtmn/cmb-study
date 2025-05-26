@@ -1,0 +1,52 @@
+import healpy as hp
+import numpy as np
+import open3d as o3d
+
+# === Load Planck 143 GHz Intensity Map ===
+filename = 'HFI_SkyMap_143-field-IQU_2048_R3.00_full.fits'
+data = hp.read_map(filename, field=0)
+
+# === HEALPix Info ===
+nside = hp.npix2nside(len(data))
+pixels = np.arange(hp.nside2npix(nside))
+theta, phi = hp.pix2ang(nside, pixels)
+
+# === Unit Vectors on Sphere ===
+x = np.sin(theta) * np.cos(phi)
+y = np.sin(theta) * np.sin(phi)
+z = np.cos(theta)
+directions = np.vstack((x, y, z)).T
+
+# === Normalize Intensities (Z-score + gamma) ===
+weights = np.nan_to_num(data)
+weights = (weights - np.mean(weights)) / np.std(weights)
+weights = np.clip(weights, -3, 3)
+weights = (weights + 3) / 6
+weights = weights ** 0.4
+
+# === Sample inward from each direction (holographic projection) ===
+n_depth = 10  # number of radial steps inward
+radii = np.linspace(1.0, 0.1, n_depth)  # from outer shell to center
+
+volume_points = []
+volume_colors = []
+
+for r in radii:
+    shell = directions * r
+    volume_points.append(shell)
+    
+    # Optional: fade intensity with depth (e.g., linearly or exponentially)
+    faded_weights = weights * (r ** 2)  # quadratic fade inward
+    shell_colors = np.vstack([faded_weights]*3).T
+    volume_colors.append(shell_colors)
+
+# === Combine all points ===
+points = np.concatenate(volume_points, axis=0)
+colors = np.concatenate(volume_colors, axis=0)
+
+# === Create and View Point Cloud ===
+pcd = o3d.geometry.PointCloud()
+pcd.points = o3d.utility.Vector3dVector(points.astype(np.float64))
+pcd.colors = o3d.utility.Vector3dVector(colors.astype(np.float64))
+
+o3d.visualization.draw_geometries([pcd])
