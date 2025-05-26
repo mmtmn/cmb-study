@@ -59,4 +59,7 @@ and here is a 480p quick video on it, quality was compressed do to github's limi
 
 https://github.com/user-attachments/assets/ac0e64ee-730b-4811-b6c5-47ac02ba70f4
 
+# Now, I'll add a colormap (like plasma) to assign visually rich RGB values based on CMB intensity, which resulted in:
+
+https://github.com/user-attachments/assets/12dd7566-3329-4a77-b04d-c94c58bab117
 
